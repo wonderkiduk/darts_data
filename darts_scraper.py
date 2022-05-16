@@ -92,7 +92,7 @@ def get_csv_of_all_matches_from_specific_day(date, specific_tournaments=None):
     if tournaments is None:
         return
 
-    if all(specific_tournament not in named_tournaments for specific_tournament in specific_tournaments):
+    if specific_tournaments and all(specific_tournament not in named_tournaments for specific_tournament in specific_tournaments):
         print(f"{','.join(specific_tournaments)} did not occur on 2022-05-15.")
         return
         
@@ -142,5 +142,5 @@ def get_tournaments_from_range_of_dates(start_date, end_date):
     return tournaments
 
 # get_tournaments_from_range_of_dates('2022-05-15', '2022-05-16')
-# get_csv_of_all_matches_from_specific_day('2021-12-29', specific_tournaments=['PDC World Championship 2022'])
+# get_csv_of_all_matches_from_specific_day('2021-11-18')
 get_matches_from_range_of_dates('2021-12-15', '2022-01-03', specific_tournaments=['PDC World Championship 2022'])
